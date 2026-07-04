@@ -9,17 +9,11 @@
 <meta name="theme-color" content="#070511">
 <title>Suite Hustle</title>
 <style>
-:root{
---bg:#070511;--panel:#11101b;--panel2:#211934;--txt:#fff;--muted:#cfc3e8;--gold:#ffd35d;--pink:#ff2d8d;--purple:#913bff;--cyan:#36d8ff;--green:#24e38b;--red:#ff4059;--orange:#ff9e2c;
-}
+:root{--bg:#070511;--panel:#11101b;--panel2:#211934;--txt:#fff;--muted:#cec3e8;--gold:#ffd35d;--pink:#ff2d8d;--purple:#913bff;--cyan:#36d8ff;--green:#24e38b;--red:#ff4059;--orange:#ff9e2c}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05030a;color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,sans-serif;touch-action:none}
-button{border:0;border-radius:18px;padding:13px 18px;color:white;font-weight:1000;font-size:16px;background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 12px 28px #0009,inset 0 1px #fff4}
-button:active{transform:scale(.97)}
-button.secondary{background:#252039}
-button.gold{background:linear-gradient(135deg,#ffd35d,#ff9e2c);color:#140c05}
-button.green{background:linear-gradient(135deg,#24e38b,#18a7ff)}
-button.red{background:linear-gradient(135deg,#ff4059,#a4162f)}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#05030a;color:white;font-family:system-ui,-apple-system,Segoe UI,sans-serif;touch-action:none}
+button{border:0;border-radius:17px;padding:13px 17px;color:white;font-weight:1000;font-size:16px;background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 12px 28px #0009,inset 0 1px #fff4}
+button:active{transform:scale(.97)}button.secondary{background:#252039}button.gold{background:linear-gradient(135deg,#ffd35d,#ff9e2c);color:#140c05}button.green{background:linear-gradient(135deg,#24e38b,#18a7ff)}button.red{background:linear-gradient(135deg,#ff4059,#a4162f)}
 #rotate{display:none;position:fixed;inset:0;background:radial-gradient(circle at 50% 0,#24173d,#070511 60%);z-index:999;align-items:center;justify-content:center;text-align:center;padding:30px}
 #rotate h1{font-size:38px;margin:0 0 10px}#rotate p{font-size:18px;color:var(--muted)}
 @media (orientation:portrait){#app{display:none}#rotate{display:flex}}
@@ -27,281 +21,92 @@ button.red{background:linear-gradient(135deg,#ff4059,#a4162f)}
 .screen{position:absolute;inset:0;display:none}.screen.active{display:block}
 .logo{font-size:58px;line-height:.9;font-weight:1000;letter-spacing:-3px;text-shadow:0 12px 30px #000}.logo span{color:#ff2c35}
 .tag{font-family:cursive;color:#ff3d57;font-size:27px;transform:rotate(-2deg);font-weight:900}
-#load{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:linear-gradient(180deg,#171026,#030208)}
-.loadbox{width:min(75vw,520px);height:18px;border-radius:999px;background:#0008;border:2px solid #ffffff24;overflow:hidden}.loadfill{height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--gold));animation:load 10s linear forwards}@keyframes load{to{width:100%}}
+#load{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;background:linear-gradient(180deg,#171026,#030208)}
+.loadbox{width:min(78vw,560px);height:22px;border-radius:999px;background:#0008;border:2px solid #ffffff24;overflow:hidden}.loadfill{height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--gold))}
+#timer{font-size:28px;font-weight:1000;color:var(--gold)}
 #menu{padding:24px}.menuWrap{height:100%;display:grid;grid-template-columns:350px 1fr;gap:22px}
-.card{background:#0b0917dd;border:1px solid #ffffff1e;border-radius:30px;box-shadow:0 22px 70px #000a;padding:24px}
-.menuBtns{display:grid;gap:12px;margin-top:25px;max-width:245px}
-.hero{position:relative;overflow:hidden;border-radius:34px;background:linear-gradient(180deg,#1e1732,#0a0712);border:1px solid #ffffff20}
-.heroTop{height:33%;position:relative;overflow:hidden;background:linear-gradient(#171b34,#080a13)}
-.city{position:absolute;inset:0;background:linear-gradient(90deg,#0c0c11 4%,transparent 4% 8%,#14141a 8% 15%,transparent 15% 23%,#09090e 23% 32%,transparent 32% 38%,#15151d 38% 45%,transparent 45%)}
-.road{position:absolute;bottom:0;width:100%;height:42px;background:#08080d;border-top:2px dashed #ffffff40}
+.card{background:#0b0917dd;border:1px solid #ffffff1e;border-radius:30px;box-shadow:0 22px 70px #000a;padding:24px}.menuBtns{display:grid;gap:12px;margin-top:24px;max-width:245px}
+.hero{position:relative;overflow:hidden;border-radius:34px;background:linear-gradient(180deg,#1e1732,#0a0712);border:1px solid #ffffff20}.heroTop{height:33%;position:relative;overflow:hidden;background:linear-gradient(#171b34,#080a13)}
+.city{position:absolute;inset:0;background:linear-gradient(90deg,#0c0c11 4%,transparent 4% 8%,#14141a 8% 15%,transparent 15% 23%,#09090e 23% 32%,transparent 32% 38%,#15151d 38% 45%,transparent 45%)}.road{position:absolute;bottom:0;width:100%;height:42px;background:#08080d;border-top:2px dashed #ffffff40}
 .drive{position:absolute;bottom:7px;left:-100px;width:90px;height:32px;border-radius:16px;background:linear-gradient(90deg,#ff2d8d,#783bff);box-shadow:0 0 22px #ff2d8d77;animation:car 7s linear infinite}.drive.b{bottom:49px;background:linear-gradient(90deg,#24e38b,#36d8ff);animation-duration:11s}.drive.c{bottom:7px;background:linear-gradient(90deg,#ffd35d,#ff9e2c);animation-duration:13s;animation-delay:2s}@keyframes car{to{left:110%}}
 .heroHotel{position:absolute;inset:33% 0 0;padding:22px;display:grid;grid-template-columns:1fr 150px 1fr;gap:15px}.miniRoom,.miniStation,.miniElev{border-radius:24px;display:flex;align-items:center;justify-content:center;font-weight:1000;font-size:25px;border:2px solid #ffffff18;background:linear-gradient(180deg,#392d53,#171225)}.miniStation{font-size:28px;background:linear-gradient(135deg,#5e267d,#23162f)}.miniElev{color:var(--gold);background:#0f0f18}
-#game{overflow:auto;-webkit-overflow-scrolling:touch}
-.world{position:relative;min-width:1450px;min-height:920px;padding:14px;background:linear-gradient(180deg,#151126,#07050e)}
-.top{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0 12px;background:linear-gradient(180deg,#151126,#15112600)}
-.pill{background:#090712e8;border:1px solid #ffffff22;border-radius:26px;padding:12px 20px;font-size:22px;font-weight:1000;box-shadow:0 12px 35px #0008}
-#canvasWrap{position:relative;width:1320px;height:690px;margin:0 auto;border-radius:40px;overflow:hidden;border:3px solid #ffffff20;box-shadow:0 30px 90px #000c;background:#111}
-canvas{display:block;width:1320px;height:690px}
-.hud{position:absolute;left:20px;bottom:120px;width:520px;background:#080711eb;border:1px solid #ffffff22;border-radius:26px;padding:18px;font-size:19px;line-height:1.35;box-shadow:0 18px 55px #000}
+#game{overflow:auto;-webkit-overflow-scrolling:touch}.world{position:relative;min-width:1450px;min-height:920px;padding:14px;background:linear-gradient(180deg,#151126,#07050e)}
+.top{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;gap:12px;padding:8px 0 12px;background:linear-gradient(180deg,#151126,#15112600)}.pill{background:#090712e8;border:1px solid #ffffff22;border-radius:26px;padding:12px 20px;font-size:22px;font-weight:1000;box-shadow:0 12px 35px #0008}
+#canvasWrap{position:relative;width:1320px;height:690px;margin:0 auto;border-radius:40px;overflow:hidden;border:3px solid #ffffff20;box-shadow:0 30px 90px #000c;background:#111}canvas{display:block;width:1320px;height:690px}
+.hud{position:absolute;left:20px;bottom:120px;width:520px;background:#080711eb;border:1px solid #ffffff22;border-radius:26px;padding:18px;font-size:19px;line-height:1.35;box-shadow:0 18px 55px #000}.hud b,.ticket b{color:var(--gold)}
 .ticket{position:absolute;right:20px;bottom:120px;width:430px;background:#080711eb;border:1px solid #ffffff22;border-radius:26px;padding:18px;font-size:18px;line-height:1.45;box-shadow:0 18px 55px #000}
-.ticket b,.hud b{color:var(--gold)}
-.actions{position:sticky;bottom:0;z-index:80;background:#05040be8;border-top:1px solid #ffffff18;padding:12px;display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap}
-.modal{position:fixed;inset:0;z-index:200;background:#05040bf5;display:none;padding:22px;overflow:auto}.modal.show{display:block}.modalBox{max-width:980px;margin:auto;background:linear-gradient(180deg,#221934,#0c0915);border:1px solid #ffffff24;border-radius:30px;padding:24px;box-shadow:0 25px 90px #000}.modal h1{margin:0 0 8px;font-size:36px}.modal p{color:var(--muted);font-size:18px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.step{min-height:105px;border-radius:22px;border:2px solid #ffffff1b;background:#171326;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:1000;font-size:20px;padding:14px}.step.done{background:#123628;border-color:#24e38b}.step.hot{background:#3b1b0c;border-color:#ff9e2c}
-.shopGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:15px}.shopItem{background:#151226;border:1px solid #ffffff18;border-radius:22px;padding:16px}.shopItem h3{margin:0 0 6px}.toast{position:fixed;left:50%;bottom:96px;z-index:300;transform:translateX(-50%);display:none;background:#090712;border:1px solid #ffffff24;border-radius:18px;padding:13px 18px;font-weight:1000;box-shadow:0 15px 40px #000}
+.actions{position:sticky;bottom:0;z-index:80;background:#05040be8;border-top:1px solid #ffffff18;padding:12px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.modal{position:fixed;inset:0;z-index:200;background:#05040bf7;display:none;padding:16px;overflow:auto}.modal.show{display:block}.modalBox{max-width:1100px;margin:auto;background:linear-gradient(180deg,#221934,#0c0915);border:1px solid #ffffff24;border-radius:30px;padding:20px;box-shadow:0 25px 90px #000}.modal h1{margin:0 0 8px;font-size:34px}.modal p{color:var(--muted);font-size:17px}
+.stationTabs{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.tab{background:#252039}.tab.active{background:linear-gradient(135deg,var(--pink),var(--purple))}
+.stationGame{display:grid;grid-template-columns:290px 1fr 270px;gap:16px;min-height:430px}.orderPad,.cookArea,.scorePad{background:#141126;border:1px solid #ffffff1d;border-radius:24px;padding:16px}.orderPad h2,.scorePad h2{margin:0 0 10px;color:var(--gold)}
+.ticketCard{background:#fff;color:#211428;border-radius:18px;padding:14px;font-weight:900;box-shadow:0 8px 20px #0008}.ticketCard div{border-bottom:1px dashed #0003;padding:8px 0}
+.cookArea{position:relative;overflow:hidden;background:linear-gradient(180deg,#2a2340,#120e1d)}.counter{pointer-events:none;position:absolute;left:0;right:0;bottom:0;height:100px;background:#3b2445;border-top:5px solid #ffffff1a}
+.plate{pointer-events:none;position:absolute;left:50%;bottom:38px;transform:translateX(-50%);width:240px;height:72px;background:#eee;border-radius:50%;box-shadow:0 12px 25px #0008}.food{pointer-events:none;position:absolute;border-radius:14px;box-shadow:0 6px 10px #0005}.bun{background:#c98539;width:110px;height:38px}.patty{background:#5c2e18;width:110px;height:28px}.cheese{background:#ffd34a;width:115px;height:15px}.fries{background:#f4b13e;width:90px;height:70px}.drink{background:#45d8ff;width:55px;height:105px;border-radius:10px}
+.dragItem{display:inline-flex;margin:6px;padding:12px;border-radius:14px;background:#2a2440;border:1px solid #ffffff22;font-weight:900}.progress{height:18px;border-radius:999px;background:#0008;overflow:hidden;border:1px solid #ffffff22;margin:10px 0}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--gold))}
+.toast{position:fixed;left:50%;bottom:96px;z-index:300;transform:translateX(-50%);display:none;background:#090712;border:1px solid #ffffff24;border-radius:18px;padding:13px 18px;font-weight:1000;box-shadow:0 15px 40px #000}
 </style>
 </head>
 <body>
-<div id="rotate"><div><h1>Rotate Your Phone</h1><p>Suite Hustle plays in landscape so the hotel fits like a real app.</p></div></div>
+<div id="rotate"><div><h1>Rotate Your Phone</h1><p>Suite Hustle is landscape only so the stations fit right.</p></div></div>
 <div id="app">
 <section id="load" class="screen active">
   <div class="logo">SUITE <span>HUSTLE</span></div>
   <div class="tag">hotel empire room service</div>
-  <div class="loadbox"><div class="loadfill"></div></div>
-  <p id="loadMsg">Loading hotel, guests, kitchen, traffic, and staff...</p>
+  <div id="timer">10</div>
+  <div class="loadbox"><div class="loadfill" id="loadfill"></div></div>
+  <p id="loadMsg">Loading hotel stations...</p>
 </section>
-
 <section id="menu" class="screen">
- <div class="menuWrap">
-  <div class="card">
-    <div class="logo" style="font-size:48px">SUITE <span>HUSTLE</span></div>
-    <div class="tag">Build. Cook. Deliver. Upgrade.</div>
-    <p style="color:var(--muted);font-size:18px;margin-top:18px">Run your own 2D hotel. Check in guests, cook room-service orders, ride the elevator, deliver food, clean rooms, hire staff, and upgrade through 100 levels.</p>
-    <div class="menuBtns">
-      <button onclick="startGame()">PLAY</button>
-      <button class="secondary" onclick="openModal('rules')">RULES</button>
-      <button class="secondary" onclick="openModal('settings')">SETTINGS</button>
-      <button class="red" onclick="resetGame()">RESET SAVE</button>
-    </div>
-  </div>
-  <div class="hero">
-    <div class="heroTop"><div class="city"></div><div class="road"></div><div class="drive"></div><div class="drive b"></div><div class="drive c"></div></div>
-    <div class="heroHotel">
-      <div class="miniRoom">201</div><div class="miniElev">ELEVATOR</div><div class="miniRoom">204</div>
-      <div class="miniStation">🛎️ FRONT DESK</div><div></div><div class="miniStation" style="background:linear-gradient(135deg,#6a3517,#22120b)">🍳 KITCHEN</div>
-    </div>
-  </div>
- </div>
+ <div class="menuWrap"><div class="card">
+  <div class="logo" style="font-size:48px">SUITE <span>HUSTLE</span></div><div class="tag">Build. Cook. Deliver. Upgrade.</div>
+  <p style="color:var(--muted);font-size:18px;margin-top:18px">A 2D hotel game focused on station-based cooking, room service, staff, upgrades, elevators, and 100 levels.</p>
+  <div class="menuBtns"><button onclick="startGame()">PLAY</button><button class="secondary" onclick="openModal('rules')">RULES</button><button class="secondary" onclick="openModal('settings')">SETTINGS</button><button class="red" onclick="resetGame()">RESET SAVE</button></div>
+ </div><div class="hero"><div class="heroTop"><div class="city"></div><div class="road"></div><div class="drive"></div><div class="drive b"></div><div class="drive c"></div></div><div class="heroHotel"><div class="miniRoom">201</div><div class="miniElev">ELEVATOR</div><div class="miniRoom">204</div><div class="miniStation">🛎️ FRONT DESK</div><div></div><div class="miniStation" style="background:linear-gradient(135deg,#6a3517,#22120b)">🍳 KITCHEN</div></div></div></div>
 </section>
-
 <section id="game" class="screen">
- <div class="world">
-  <div class="top">
-    <div class="pill">🏨 Level <span id="lvl">1</span>/100</div>
-    <div class="pill">💵 $<span id="money">500</span></div>
-    <div class="pill">⭐ <span id="stars">4.0</span></div>
-    <div class="pill">👥 Staff <span id="staff">0</span></div>
-  </div>
-  <div id="canvasWrap">
-    <canvas id="cv" width="1320" height="690"></canvas>
-    <div class="hud" id="hud">Tap <b>Check In</b>. Guests will order room service after getting a room.</div>
-    <div class="ticket" id="ticket">Current Ticket: <b>None</b><br>Station: Front Desk<br>Elevator: <b>Working</b><br>Staff Orders Finished: <b id="staffDone">0</b></div>
-  </div>
-  <div class="actions">
-    <button onclick="checkIn()">Check In</button>
-    <button class="gold" onclick="openKitchen()">Cook</button>
-    <button class="green" onclick="deliver()">Deliver</button>
-    <button class="secondary" onclick="cleanRoom()">Clean Room</button>
-    <button onclick="upgradeHotel()">Upgrade Hotel</button>
-    <button class="secondary" onclick="hireStaff()">Hire Staff</button>
-    <button class="secondary" onclick="openModal('shop')">Hotel Shop</button>
-    <button class="secondary" onclick="openModal('rules')">Rules</button>
-  </div>
- </div>
+ <div class="world"><div class="top"><div class="pill">🏨 Level <span id="lvl">1</span>/100</div><div class="pill">💵 $<span id="money">500</span></div><div class="pill">⭐ <span id="stars">4.0</span></div><div class="pill">👥 Staff <span id="staff">0</span></div></div>
+ <div id="canvasWrap"><canvas id="cv" width="1320" height="690"></canvas><div class="hud" id="hud">Tap <b>Check In</b>. Then take the order to the kitchen station.</div><div class="ticket" id="ticket">Current Ticket: <b>None</b><br>Station: Front Desk<br>Elevator: <b>Working</b><br>Staff Orders Finished: <b id="staffDone">0</b></div></div>
+ <div class="actions"><button onclick="checkIn()">Check In</button><button class="gold" onclick="openKitchen()">Cook Station</button><button class="green" onclick="deliver()">Deliver</button><button class="secondary" onclick="cleanRoom()">Clean Room</button><button onclick="upgradeHotel()">Upgrade Hotel</button><button class="secondary" onclick="hireStaff()">Hire Staff</button><button class="secondary" onclick="openModal('rules')">Rules</button></div></div>
 </section>
 
-<div class="modal" id="kitchen">
- <div class="modalBox">
-  <h1>🍳 Kitchen Station</h1>
-  <p id="cookSub">Make the guest order. Complete the food steps in order before delivery.</p>
-  <h2 id="cookTitle" style="color:var(--gold)">Burger + Fries + Cola</h2>
-  <div class="steps">
-    <div class="step" id="step1" onclick="cookStep(1)">1. Prep Ingredients</div>
-    <div class="step" id="step2" onclick="cookStep(2)">2. Cook Main Food</div>
-    <div class="step" id="step3" onclick="cookStep(3)">3. Make Side</div>
-    <div class="step" id="step4" onclick="cookStep(4)">4. Fill Drink</div>
-    <div class="step" id="step5" onclick="cookStep(5)">5. Plate & Bag</div>
-    <div class="step hot" id="step6" onclick="finishCook()">6. Finish Ticket</div>
-  </div>
-  <button onclick="closeModal('kitchen')">Back To Hotel</button>
- </div>
-</div>
+<div class="modal" id="kitchen"><div class="modalBox">
+<h1>🍳 Room Service Kitchen</h1><p>Station gameplay: take the ticket, build/cook each part, then finish the plate before delivering.</p>
+<div class="stationTabs"><button id="tabOrder" class="tab active" onclick="station('order')">1 Order</button><button id="tabGrill" class="tab" onclick="station('grill')">2 Grill</button><button id="tabBuild" class="tab" onclick="station('build')">3 Build</button><button id="tabDrink" class="tab" onclick="station('drink')">4 Drink</button><button id="tabServe" class="tab" onclick="station('serve')">5 Serve</button></div>
+<div class="stationGame">
+ <div class="orderPad"><h2>Ticket</h2><div class="ticketCard" id="cookTicket"></div><br><button class="green" onclick="gradeStation()">Grade Order</button></div>
+ <div class="cookArea" id="cookArea"><div class="counter"></div><div class="plate"></div></div>
+ <div class="scorePad"><h2>Station Score</h2><p>Prep: <b id="prepScore">0%</b></p><p>Cook: <b id="cookScore">0%</b></p><p>Build: <b id="buildScore">0%</b></p><p>Drink: <b id="drinkScore">0%</b></p><div class="progress"><div class="bar" id="scoreBar"></div></div><button onclick="finishCook()" class="gold">Finish Ticket</button><br><br><button class="secondary" onclick="closeModal('kitchen')">Back</button></div>
+</div></div></div>
 
-<div class="modal" id="rules">
- <div class="modalBox">
-  <h1>How To Play</h1>
-  <p><b>Goal:</b> build your hotel from Level 1 to Level 100. Check guests in, cook like a restaurant game, deliver using the elevator, clean rooms, hire staff, and upgrade the hotel graphics.</p>
-  <p><b>Orders:</b> each guest gives a different room-service ticket. Staff can do separate orders automatically, but you still run the important tickets.</p>
-  <p><b>Elevator:</b> it can break. Pay to repair it or deliveries stop.</p>
-  <button onclick="closeModal('rules')">Got It</button>
- </div>
-</div>
-
-<div class="modal" id="settings">
- <div class="modalBox">
-  <h1>Settings</h1>
-  <p>This finished phone build saves progress, forces landscape layout, and runs as a Home Screen web app.</p>
-  <button onclick="toggleSound()">Toggle Sound: <span id="soundLbl">On</span></button>
-  <button class="secondary" onclick="closeModal('settings')">Close</button>
- </div>
-</div>
-
-<div class="modal" id="shop">
- <div class="modalBox">
-  <h1>Hotel Shop</h1>
-  <p>These upgrades boost money and visually improve the hotel as you level up.</p>
-  <div class="shopGrid">
-    <div class="shopItem"><h3>Luxury Lobby</h3><p>+ tips, better rating.</p><button onclick="buyBoost('lobby',450)">Buy $450</button></div>
-    <div class="shopItem"><h3>Better Kitchen</h3><p>+ cooking payouts.</p><button onclick="buyBoost('kitchen',550)">Buy $550</button></div>
-    <div class="shopItem"><h3>Fast Elevator</h3><p>Less breakdown chance.</p><button onclick="buyBoost('elevator',650)">Buy $650</button></div>
-    <div class="shopItem"><h3>Room Remodel</h3><p>+ rating, better guests.</p><button onclick="buyBoost('rooms',700)">Buy $700</button></div>
-  </div>
-  <br><button class="secondary" onclick="closeModal('shop')">Close</button>
- </div>
-</div>
-
+<div class="modal" id="rules"><div class="modalBox"><h1>How To Play</h1><p>Check in guests, cook their room-service order inside the station screen, deliver through the elevator, clean the room, hire staff, and upgrade through 100 hotel levels.</p><button onclick="closeModal('rules')">Got It</button></div></div>
+<div class="modal" id="settings"><div class="modalBox"><h1>Settings</h1><p>Progress saves automatically. Landscape mode is enforced.</p><button onclick="toggleSound()">Toggle Sound: <span id="soundLbl">On</span></button><button class="secondary" onclick="closeModal('settings')">Close</button></div></div>
 <div class="toast" id="toast"></div>
 </div>
-
 <script>
-const $=id=>document.getElementById(id), cv=$('cv'), ctx=cv.getContext('2d');
-let S={
- level:1,cash:500,rating:4.0,staff:0,staffDone:0,sound:true,
- ticket:null,cookStep:0,elevator:true,dirtyRooms:[],checkedRooms:[],boosts:{lobby:0,kitchen:0,elevator:0,rooms:0}
-};
-const orders=[
- {name:'Burger + Fries + Cola',pay:95},
- {name:'Pancakes + Bacon + Coffee',pay:110},
- {name:'Pizza Slice + Wings + Sprite',pay:125},
- {name:'Chicken Alfredo + Tea',pay:145},
- {name:'Steak + Potato + Lemonade',pay:190},
- {name:'Seafood Plate + Water',pay:220}
-];
-const rooms=['201','202','203','204','301','302','303','304'];
-let cars=[{x:-80,y:112,s:2.1,c:'#ff2d8d'},{x:470,y:78,s:1.5,c:'#24e38b'},{x:950,y:112,s:2.5,c:'#ffd35d'}];
-let npcs=[{x:130,y:505,c:'#7b3cff',t:0},{x:1030,y:505,c:'#ff8a24',t:1.5},{x:250,y:505,c:'#ff2d8d',t:3}];
-function save(){localStorage.setItem('suiteHustleFinished',JSON.stringify(S))}
-function load(){try{let s=JSON.parse(localStorage.getItem('suiteHustleFinished')); if(s) S={...S,...s,boosts:{...S.boosts,...(s.boosts||{})}}catch(e){} updateUI()}
-function resetGame(){if(confirm('Reset Suite Hustle save?')){localStorage.removeItem('suiteHustleFinished');location.reload()}}
-function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$(id).classList.add('active')}
-setTimeout(()=>show('menu'),10000);
-function startGame(){show('game');updateUI();toast('Welcome to Suite Hustle')}
-function openModal(id){$(id).classList.add('show')}
-function closeModal(id){$(id).classList.remove('show')}
-function toast(t){let el=$('toast');el.textContent=t;el.style.display='block';setTimeout(()=>el.style.display='none',2100)}
-function hud(t){$('hud').innerHTML=t;updateUI();save()}
-function updateUI(){
- $('lvl').textContent=S.level;$('money').textContent=Math.floor(S.cash);$('stars').textContent=S.rating.toFixed(1);$('staff').textContent=S.staff;$('staffDone').textContent=S.staffDone;
- $('ticket').innerHTML=`Current Ticket: <b>${S.ticket?S.ticket.order.name:'None'}</b><br>Room: <b>${S.ticket?S.ticket.room:'-'}</b><br>Station: ${S.ticket?S.ticket.stage:'Front Desk'}<br>Elevator: <b>${S.elevator?'Working':'Broken'}</b><br>Staff Orders Finished: <b>${S.staffDone}</b>`;
- $('soundLbl').textContent=S.sound?'On':'Off';
-}
-function randomRoom(){return rooms[Math.floor(Math.random()*rooms.length)]}
-function randomOrder(){return orders[Math.min(orders.length-1,Math.floor(Math.random()*orders.length*Math.min(1,S.level/45+.2)))]}
-function checkIn(){
- if(S.ticket && S.ticket.stage!=='Complete'){toast('Finish the current guest first');return}
- let room=randomRoom(), order=randomOrder();
- S.ticket={room,order,stage:'Kitchen',cooked:false,delivered:false,cleaned:false};
- S.checkedRooms.push(room);S.cookStep=0;
- for(let i=1;i<=6;i++) $('step'+i).classList.remove('done');
- hud(`Guest checked into Room <b>${room}</b> and ordered <b>${order.name}</b>. Go cook it.`);
-}
-function openKitchen(){
- if(!S.ticket){toast('Check in a guest first');return}
- if(S.ticket.cooked){toast('Order already cooked. Deliver it.');return}
- $('cookTitle').textContent=S.ticket.order.name;openModal('kitchen');
-}
-function cookStep(n){
- if(!S.ticket){toast('No ticket');return}
- if(n>S.cookStep+1){toast('Do the steps in order');return}
- S.cookStep=Math.max(S.cookStep,n);$('step'+n).classList.add('done');
- if(S.sound) beep(240+n*35,.05);
-}
-function finishCook(){
- if(!S.ticket){toast('No ticket');return}
- if(S.cookStep<5){toast('Finish every cooking station first');return}
- S.ticket.cooked=true;S.ticket.stage='Elevator → Room '+S.ticket.room;closeModal('kitchen');
- hud(`Order bagged. Take the elevator and deliver to Room <b>${S.ticket.room}</b>.`);
-}
-function deliver(){
- if(!S.ticket){toast('No active ticket');return}
- if(!S.ticket.cooked){toast('Cook the order first');return}
- if(!S.elevator){
-   let repair=120-Math.min(60,S.boosts.elevator*15);
-   if(S.cash>=repair){S.cash-=repair;S.elevator=true;toast('Elevator repaired for $'+repair)}
-   else {toast('Elevator broke. Need repair money.');return}
- }
- let bonus=S.boosts.kitchen*20+S.boosts.lobby*15+S.staff*8;
- let pay=S.ticket.order.pay+bonus+Math.floor(S.level*4);
- S.cash+=pay; S.rating=Math.min(5,S.rating+.04+.01*S.boosts.rooms);
- S.dirtyRooms.push(S.ticket.room); S.ticket.stage='Clean Room'; S.ticket.delivered=true;
- let breakChance=Math.max(.08,.28-S.boosts.elevator*.05); if(Math.random()<breakChance) S.elevator=false;
- hud(`Delivered <b>${S.ticket.order.name}</b> to Room <b>${S.ticket.room}</b>. Earned <b>$${pay}</b>. Clean the room next.`);
-}
-function cleanRoom(){
- if(!S.ticket||!S.ticket.delivered){toast('Deliver first');return}
- let cleanPay=35+S.boosts.rooms*15; S.cash+=cleanPay;
- S.dirtyRooms=S.dirtyRooms.filter(r=>r!==S.ticket.room); S.ticket.stage='Complete';
- hud(`Room <b>${S.ticket.room}</b> cleaned. You earned <b>$${cleanPay}</b>. Ready for the next guest.`);
-}
-function upgradeHotel(){
- let cost=300+S.level*85;
- if(S.cash<cost){toast('Need $'+cost+' to upgrade');return}
- S.cash-=cost; S.level=Math.min(100,S.level+1); S.rating=Math.min(5,S.rating+.03);
- hud(`Hotel upgraded to <b>Level ${S.level}</b>. Rooms, colors, lobby, and exterior improved.`);
-}
-function hireStaff(){
- let cost=350+S.staff*280;
- if(S.cash<cost){toast('Need $'+cost+' to hire staff');return}
- S.cash-=cost;S.staff++;
- hud(`Hired employee #<b>${S.staff}</b>. They now complete separate orders automatically.`);
-}
-function buyBoost(k,cost){
- if(S.cash<cost){toast('Need $'+cost);return}
- S.cash-=cost;S.boosts[k]++;toast(k+' upgraded');updateUI();save();
-}
-function toggleSound(){S.sound=!S.sound;updateUI();save()}
-let audioCtx=null;function beep(f,d){try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.frequency.value=f;o.connect(g);g.connect(audioCtx.destination);g.gain.value=.035;o.start();o.stop(audioCtx.currentTime+d)}catch(e){}}
-setInterval(()=>{if(S.staff>0 && Math.random()<.22*S.staff){let earn=35+S.staff*18+S.level*2;S.cash+=earn;S.staffDone++; if(S.rating<5)S.rating+=.005; updateUI();save();}},5000);
-function roundRect(x,y,w,h,r,fill,stroke){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=3;ctx.stroke()}}
-function draw(){
- ctx.clearRect(0,0,1320,690);
- let theme=Math.min(1,S.level/100), hue=theme*60;
- let grad=ctx.createLinearGradient(0,0,0,690);grad.addColorStop(0,`hsl(${258+hue},45%,22%)`);grad.addColorStop(.45,'#151020');grad.addColorStop(1,'#090711');ctx.fillStyle=grad;ctx.fillRect(0,0,1320,690);
- // outside window
- ctx.fillStyle='#12172d';ctx.fillRect(0,0,1320,135);
- ctx.fillStyle='#0b0b12';for(let i=0;i<20;i++){let h=40+(i%4)*20;ctx.fillRect(i*75,95-h,50,h);ctx.fillStyle=i%2?'#15151d':'#0d0d13'}
- ctx.fillStyle='#08080d';ctx.fillRect(0,93,1320,42);ctx.strokeStyle='#ffffff44';ctx.setLineDash([18,18]);ctx.beginPath();ctx.moveTo(0,115);ctx.lineTo(1320,115);ctx.stroke();ctx.setLineDash([]);
- cars.forEach(car=>{car.x+=car.s;if(car.x>1380)car.x=-120;roundRect(car.x,car.y,86,30,15,car.c);ctx.fillStyle='#060609';ctx.beginPath();ctx.arc(car.x+18,car.y+29,8,0,Math.PI*2);ctx.arc(car.x+68,car.y+29,8,0,Math.PI*2);ctx.fill()});
- // hotel floor
- ctx.fillStyle='#181326';ctx.fillRect(0,135,1320,555);
- ctx.strokeStyle='#ffffff12';for(let y=205;y<650;y+=95){ctx.beginPath();ctx.moveTo(40,y);ctx.lineTo(1280,y);ctx.stroke()}
- // rooms
- let roomY=170, xs=[70,310,740,980], nums=['201','202','203','204'];
- nums.forEach((num,i)=>{let dirty=S.dirtyRooms.includes(num); let checked=S.checkedRooms.includes(num); roundRect(xs[i],roomY,200,105,24,dirty?'#3b1522':checked?'#1b332a':'#2a2140',dirty?S.red:'#ffffff20'); ctx.fillStyle='#e9ddff';ctx.font='900 34px system-ui';ctx.textAlign='center';ctx.fillText(num,xs[i]+100,roomY+62)});
- let nums2=['301','302','303','304'];nums2.forEach((num,i)=>{roundRect(xs[i],305,200,105,24,S.dirtyRooms.includes(num)?'#3b1522':'#221b35','#ffffff16');ctx.fillStyle='#e9ddff';ctx.font='900 30px system-ui';ctx.fillText(num,xs[i]+100,365)});
- roundRect(575,135,170,380,0,'#0e0e18','#ffffff25');ctx.fillStyle= S.elevator? '#ffd35d':'#ff4059';ctx.font='1000 26px system-ui';ctx.fillText(S.elevator?'ELEVATOR':'BROKEN',660,245);
- roundRect(95,480,350,120,28,'#32173f','#8d46bb');ctx.fillStyle='#fff';ctx.font='1000 34px system-ui';ctx.fillText('🛎️ FRONT DESK',270,553);
- roundRect(875,480,350,120,28,'#3d1d10','#89502e');ctx.fillText('🍳 KITCHEN',1050,553);
- // upgrades visuals
- if(S.level>10){roundRect(480,535,120,60,18,'#214c3d','#24e38b');ctx.fillText('POOL',540,574)}
- if(S.level>25){roundRect(720,535,120,60,18,'#263a58','#36d8ff');ctx.fillText('GYM',780,574)}
- if(S.level>45){roundRect(610,545,100,45,16,'#5b3a12','#ffd35d');ctx.fillText('SPA',660,576)}
- if(S.level>70){roundRect(20,145,45,455,10,'#372855','#ffffff22');roundRect(1255,145,45,455,10,'#372855','#ffffff22')}
- // npcs
- npcs.forEach(n=>{n.t+=.02;n.x+=Math.sin(n.t)*.4;drawChar(n.x,n.y,n.c,false)});
- drawChar(640,555,'#7c35ff',true);
- requestAnimationFrame(draw)
-}
-function drawChar(x,y,c,player){
- ctx.save();ctx.translate(x,y);
- roundRect(-24,-42,48,72,22,c,'#09060f');ctx.fillStyle='#8a5536';ctx.beginPath();ctx.arc(0,-30,20,0,Math.PI*2);ctx.fill();
- ctx.fillStyle='#11131c';roundRect(-18,-10,36,28,12,'#11131c');
- ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(-7,-31,4,0,7);ctx.arc(7,-31,4,0,7);ctx.fill();
- ctx.fillStyle=player?'#ffd35d':'#ffffff';ctx.font='900 12px system-ui';ctx.textAlign='center';ctx.fillText(player?'YOU':'GUEST',0,45);ctx.restore()
-}
-CanvasRenderingContext2D.prototype.roundRect = CanvasRenderingContext2D.prototype.roundRect || function(x,y,w,h,r){this.moveTo(x+r,y);this.arcTo(x+w,y,x+w,y+h,r);this.arcTo(x+w,y+h,x,y+h,r);this.arcTo(x,y+h,x,y,r);this.arcTo(x,y,x+w,y,r);return this}
+const $=id=>document.getElementById(id),cv=$('cv'),ctx=cv.getContext('2d');let loadLeft=10;
+let S={level:1,cash:500,rating:4,staff:0,staffDone:0,sound:true,ticket:null,station:'order',prep:0,cook:0,build:0,drink:0,elevator:true,dirtyRooms:[],checkedRooms:[]};
+const orders=[{name:'Burger + Fries + Cola',items:['Bun','Patty','Cheese','Fries','Cola'],pay:120},{name:'Pancakes + Bacon + Coffee',items:['Pancakes','Bacon','Syrup','Coffee'],pay:135},{name:'Pizza + Wings + Sprite',items:['Pizza','Wings','Ranch','Sprite'],pay:150},{name:'Steak + Potato + Lemonade',items:['Steak','Potato','Butter','Lemonade'],pay:190}],rooms=['201','202','203','204','301','302','303','304'];
+let cars=[{x:-80,y:112,s:2.1,c:'#ff2d8d'},{x:470,y:78,s:1.5,c:'#24e38b'},{x:950,y:112,s:2.5,c:'#ffd35d'}],npcs=[{x:130,y:505,c:'#7b3cff',t:0},{x:1030,y:505,c:'#ff8a24',t:1.5},{x:250,y:505,c:'#ff2d8d',t:3}];
+let loadInt=setInterval(()=>{loadLeft--;$('timer').textContent=loadLeft;$('loadfill').style.width=((10-loadLeft)*10)+'%';$('loadMsg').textContent=loadLeft>6?'Loading hotel stations...':loadLeft>3?'Preparing kitchen tickets...':'Opening Suite Hustle...';if(loadLeft<=0){clearInterval(loadInt);show('menu')}},1000);
+function save(){localStorage.setItem('suiteHustleStationBuild',JSON.stringify(S))}function load(){try{let s=JSON.parse(localStorage.getItem('suiteHustleStationBuild'));if(s)S={...S,...s}}catch(e){}update()}
+function resetGame(){if(confirm('Reset Suite Hustle save?')){localStorage.removeItem('suiteHustleStationBuild');location.reload()}}function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$(id).classList.add('active')}function startGame(){show('game');update();toast('Suite Hustle loaded')}function openModal(id){$(id).classList.add('show');if(id==='kitchen')renderStation()}function closeModal(id){$(id).classList.remove('show')}function toast(t){let e=$('toast');e.textContent=t;e.style.display='block';setTimeout(()=>e.style.display='none',2100)}function hud(t){$('hud').innerHTML=t;update();save()}
+function update(){ if($('lvl'))$('lvl').textContent=S.level;if($('money'))$('money').textContent=Math.floor(S.cash);if($('stars'))$('stars').textContent=S.rating.toFixed(1);if($('staff'))$('staff').textContent=S.staff;if($('soundLbl'))$('soundLbl').textContent=S.sound?'On':'Off';if($('ticket'))$('ticket').innerHTML=`Current Ticket: <b>${S.ticket?S.ticket.order.name:'None'}</b><br>Room: <b>${S.ticket?S.ticket.room:'-'}</b><br>Station: ${S.ticket?S.ticket.stage:'Front Desk'}<br>Elevator: <b>${S.elevator?'Working':'Broken'}</b><br>Staff Orders Finished: <b>${S.staffDone}</b>`;}
+function checkIn(){if(S.ticket&&S.ticket.stage!=='Complete'){toast('Finish the current guest first');return}let room=rooms[Math.floor(Math.random()*rooms.length)],order=orders[Math.floor(Math.random()*orders.length)];S.ticket={room,order,stage:'Kitchen',cooked:false,delivered:false};S.checkedRooms.push(room);S.prep=S.cook=S.build=S.drink=0;S.station='order';hud(`Room <b>${room}</b> ordered <b>${order.name}</b>. Open Cook Station.`)}
+function openKitchen(){if(!S.ticket){toast('Check in a guest first');return}if(S.ticket.cooked){toast('Already cooked. Deliver it.');return}openModal('kitchen')}
+function station(n){S.station=n;renderStation()}function tab(n){['order','grill','build','drink','serve'].forEach(x=>$('tab'+x[0].toUpperCase()+x.slice(1)).classList.toggle('active',x===n))}
+function renderStation(){if(!S.ticket)return;tab(S.station);$('cookTicket').innerHTML=`<div>Room ${S.ticket.room}</div><div>${S.ticket.order.name}</div>`+S.ticket.order.items.map(i=>`<div>• ${i}</div>`).join('');$('prepScore').textContent=S.prep+'%';$('cookScore').textContent=S.cook+'%';$('buildScore').textContent=S.build+'%';$('drinkScore').textContent=S.drink+'%';let avg=Math.floor((S.prep+S.cook+S.build+S.drink)/4);$('scoreBar').style.width=avg+'%';let area=$('cookArea');area.innerHTML='<div class="counter"></div><div class="plate"></div><div id="stationButtons" style="position:relative;z-index:5;padding:15px"></div>'; let makeBtn=(txt,fn)=>{let b=document.createElement('button');b.textContent=txt;b.onclick=fn;b.style.margin='10px';($('stationButtons')||area).appendChild(b)};if(S.station==='order'){area.innerHTML+='<h2 style="padding:20px;color:#ffd35d">Read the ticket and start prep.</h2>';makeBtn('Accept Ticket',()=>{S.prep=25;S.station='grill';renderStation()})}if(S.station==='grill'){area.innerHTML+='<h2 style="padding:20px;color:#ffd35d">Cook main item. Tap until perfect.</h2><div class="progress" style="margin:70px 40px"><div class="bar" style="width:'+S.cook+'%"></div></div>';makeBtn('Cook +25%',()=>{S.cook=Math.min(100,S.cook+25);renderStation()})}if(S.station==='build'){['bun','patty','cheese','fries'].forEach((c,i)=>{let d=document.createElement('div');d.className='food '+c;d.style.left=(430+i*45)+'px';d.style.bottom=(160+i*25)+'px';area.appendChild(d)});makeBtn('Add Ingredients +25%',()=>{S.build=Math.min(100,S.build+25);renderStation()})}if(S.station==='drink'){let d=document.createElement('div');d.className='food drink';d.style.left='520px';d.style.bottom='135px';area.appendChild(d);makeBtn('Fill Drink +25%',()=>{S.drink=Math.min(100,S.drink+25);renderStation()})}if(S.station==='serve'){area.innerHTML+='<h2 style="padding:20px;color:#ffd35d">Final tray check.</h2>';makeBtn('Plate Order',()=>{S.prep=Math.max(S.prep,100);S.build=Math.max(S.build,100);renderStation()})}save();update()}
+function gradeStation(){if(!S.ticket)return;let avg=Math.floor((S.prep+S.cook+S.build+S.drink)/4);toast('Current food score: '+avg+'%')}
+function finishCook(){if(!S.ticket)return;let avg=(S.prep+S.cook+S.build+S.drink)/4;if(avg<75){toast('Food score too low. Finish stations first.');return}S.ticket.cooked=true;S.ticket.stage='Elevator → Room '+S.ticket.room;closeModal('kitchen');hud(`Order finished with <b>${Math.floor(avg)}%</b> quality. Deliver to Room <b>${S.ticket.room}</b>.`)}
+function deliver(){if(!S.ticket){toast('No ticket');return}if(!S.ticket.cooked){toast('Cook the order first');return}if(!S.elevator){let repair=120;if(S.cash>=repair){S.cash-=repair;S.elevator=true;toast('Elevator repaired for $120')}else{toast('Elevator broken. Need $120.');return}}let quality=(S.prep+S.cook+S.build+S.drink)/4,pay=Math.floor(S.ticket.order.pay*(quality/100)+S.staff*10+S.level*3);S.cash+=pay;S.rating=Math.min(5,S.rating+(quality>90?.06:.03));S.dirtyRooms.push(S.ticket.room);S.ticket.stage='Clean Room';S.ticket.delivered=true;if(Math.random()<.25)S.elevator=false;hud(`Delivered to Room <b>${S.ticket.room}</b>. Quality <b>${Math.floor(quality)}%</b>. Earned <b>$${pay}</b>. Clean room next.`)}
+function cleanRoom(){if(!S.ticket||!S.ticket.delivered){toast('Deliver first');return}S.cash+=35;S.dirtyRooms=S.dirtyRooms.filter(r=>r!==S.ticket.room);S.ticket.stage='Complete';hud(`Room cleaned. Ready for next guest.`)}
+function upgradeHotel(){let cost=300+S.level*85;if(S.cash<cost){toast('Need $'+cost);return}S.cash-=cost;S.level=Math.min(100,S.level+1);S.rating=Math.min(5,S.rating+.03);hud(`Hotel upgraded to <b>Level ${S.level}</b>. Graphics improved.`)}
+function hireStaff(){let cost=350+S.staff*280;if(S.cash<cost){toast('Need $'+cost);return}S.cash-=cost;S.staff++;hud(`Hired employee #<b>${S.staff}</b>. Staff handles separate orders automatically.`)}
+function toggleSound(){S.sound=!S.sound;update();save()}
+setInterval(()=>{if(S.staff>0&&Math.random()<.22*S.staff){let earn=35+S.staff*18+S.level*2;S.cash+=earn;S.staffDone++;update();save()}},5000);
+function rr(x,y,w,h,r,f,s){ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fillStyle=f;ctx.fill();if(s){ctx.strokeStyle=s;ctx.lineWidth=3;ctx.stroke()}}
+CanvasRenderingContext2D.prototype.roundRect=CanvasRenderingContext2D.prototype.roundRect||function(x,y,w,h,r){this.moveTo(x+r,y);this.arcTo(x+w,y,x+w,y+h,r);this.arcTo(x+w,y+h,x,y+h,r);this.arcTo(x,y+h,x,y,r);this.arcTo(x,y,x+w,y,r);return this}
+function drawChar(x,y,c,label){ctx.save();ctx.translate(x,y);rr(-24,-42,48,72,22,c,'#09060f');ctx.fillStyle='#8a5536';ctx.beginPath();ctx.arc(0,-30,20,0,7);ctx.fill();rr(-18,-10,36,28,12,'#11131c');ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(-7,-31,4,0,7);ctx.arc(7,-31,4,0,7);ctx.fill();ctx.font='900 12px system-ui';ctx.textAlign='center';ctx.fillText(label,0,45);ctx.restore()}
+function draw(){ctx.clearRect(0,0,1320,690);let grad=ctx.createLinearGradient(0,0,0,690);grad.addColorStop(0,'#241b3a');grad.addColorStop(.45,'#151020');grad.addColorStop(1,'#090711');ctx.fillStyle=grad;ctx.fillRect(0,0,1320,690);ctx.fillStyle='#12172d';ctx.fillRect(0,0,1320,135);ctx.fillStyle='#08080d';ctx.fillRect(0,93,1320,42);ctx.setLineDash([18,18]);ctx.strokeStyle='#ffffff44';ctx.beginPath();ctx.moveTo(0,115);ctx.lineTo(1320,115);ctx.stroke();ctx.setLineDash([]);cars.forEach(car=>{car.x+=car.s;if(car.x>1380)car.x=-120;rr(car.x,car.y,86,30,15,car.c);ctx.fillStyle='#060609';ctx.beginPath();ctx.arc(car.x+18,car.y+29,8,0,7);ctx.arc(car.x+68,car.y+29,8,0,7);ctx.fill()});ctx.fillStyle='#181326';ctx.fillRect(0,135,1320,555);ctx.strokeStyle='#ffffff12';for(let y=205;y<650;y+=95){ctx.beginPath();ctx.moveTo(40,y);ctx.lineTo(1280,y);ctx.stroke()}let xs=[70,310,740,980],nums=['201','202','203','204'];nums.forEach((num,i)=>{let dirty=S.dirtyRooms.includes(num),checked=S.checkedRooms.includes(num);rr(xs[i],170,200,105,24,dirty?'#3b1522':checked?'#1b332a':'#2a2140',dirty?'#ff4059':'#ffffff20');ctx.fillStyle='#e9ddff';ctx.font='900 34px system-ui';ctx.textAlign='center';ctx.fillText(num,xs[i]+100,232)});['301','302','303','304'].forEach((num,i)=>{rr(xs[i],305,200,105,24,S.dirtyRooms.includes(num)?'#3b1522':'#221b35','#ffffff16');ctx.fillStyle='#e9ddff';ctx.font='900 30px system-ui';ctx.fillText(num,xs[i]+100,365)});rr(575,135,170,380,0,'#0e0e18','#ffffff25');ctx.fillStyle=S.elevator?'#ffd35d':'#ff4059';ctx.font='1000 26px system-ui';ctx.fillText(S.elevator?'ELEVATOR':'BROKEN',660,245);rr(95,480,350,120,28,'#32173f','#8d46bb');ctx.fillStyle='#fff';ctx.font='1000 34px system-ui';ctx.fillText('🛎️ FRONT DESK',270,553);rr(875,480,350,120,28,'#3d1d10','#89502e');ctx.fillText('🍳 KITCHEN',1050,553);npcs.forEach(n=>{n.t+=.02;n.x+=Math.sin(n.t)*.4;drawChar(n.x,n.y,n.c,'GUEST')});drawChar(640,555,'#7c35ff','YOU');requestAnimationFrame(draw)}
 load();draw();
 </script>
 </body>
